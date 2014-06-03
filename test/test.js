@@ -30,11 +30,14 @@ var typeName = require('..'),
         'NaN': NaN,
         'Infinity': Infinity,
         'Math': Math,
-        'JSON': JSON,
         'arguments object': (function(){ return arguments; })(),
         'null literal': null,
         'undefined value': undefined
     };
+
+if (typeof JSON !== 'undefined') {
+    fixtures['JSON'] = JSON;
+}
 
 describe('typeName of', function () {
     var i, sut, expected, input, tests = [
@@ -61,9 +64,12 @@ describe('typeName of', function () {
         ['anonymous constructor',    ''],
         ['null literal',             'null'],
         ['undefined value',          'undefined']
-    ], len = tests.length;
+    ];
+    if (typeof JSON !== 'undefined') {
+        tests.push(['JSON', 'JSON']);
+    }
 
-    for(i = 0; i < len; i += 1) {
+    for(i = 0; i < tests.length; i += 1) {
         sut = tests[i][0];
         expected = tests[i][1];
         input = fixtures[sut];
