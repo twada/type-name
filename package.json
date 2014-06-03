@@ -22,6 +22,20 @@
     "mocha": "^1.20.0",
     "power-assert": "^0.7.2"
   },
+  "testling": {
+      "files": "test/*.js",
+      "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6..latest",
+          "ipad/6..latest",
+          "android-browser/latest"
+      ],
+      "harness" : "mocha"
+  },
   "scripts": {
     "build": "browserify index.js --standalone typeName > ./build/type-name.js",
     "test": "./node_modules/.bin/jshint index.js && ./node_modules/.bin/mocha --require intelli-espower-loader"
