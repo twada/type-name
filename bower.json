@@ -1,0 +1,12 @@
+{
+  "name": "type-name",
+  "version": "0.0.1",
+  "description": "Just a reasonable type name",
+  "main": "build/type-name.js",
+  "ignore": [
+    "**/.*",
+    "index.js",
+    "package.json",
+    "test"
+  ]
+}

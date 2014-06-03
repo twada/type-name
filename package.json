@@ -1,0 +1,46 @@
+{
+  "name": "type-name",
+  "version": "0.0.1",
+  "description": "Just a reasonable type name",
+  "keywords": [
+    "typeof"
+  ],
+  "main": "./index.js",
+  "files": [
+    "README.md",
+    "index.js",
+    "package.json",
+    "test"
+  ],
+  "directories": {
+    "test": "test/"
+  },
+  "devDependencies": {
+    "espower-loader": "^0.7.1",
+    "intelli-espower-loader": "^0.1.0",
+    "jshint": "^2.5.1",
+    "mocha": "^1.20.0",
+    "power-assert": "^0.7.2"
+  },
+  "scripts": {
+    "build": "browserify index.js --standalone typeName > ./build/type-name.js",
+    "test": "./node_modules/.bin/jshint index.js && ./node_modules/.bin/mocha --require intelli-espower-loader"
+  },
+  "author": {
+    "name": "Takuto Wada",
+    "email": "takuto.wada@gmail.com",
+    "url": "https://github.com/twada"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/twada/type-name.git"
+  },
+  "homepage": "https://github.com/twada/type-name",
+  "bugs": "https://github.com/twada/type-name/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://twada.mit-license.org/"
+    }
+  ]
+}
