@@ -1,6 +1,10 @@
 type-name
 ================================
 
+[![Build Status](https://travis-ci.org/twada/type-name.svg?branch=master)](https://travis-ci.org/twada/type-name)
+[![NPM version](https://badge.fury.io/js/type-name.svg)](http://badge.fury.io/js/type-name)
+[![Dependency Status](https://gemnasium.com/twada/type-name.svg)](https://gemnasium.com/twada/type-name)
+
 Just a reasonable type name
 
 
