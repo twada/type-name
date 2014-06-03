@@ -16,11 +16,8 @@
     "test": "test/"
   },
   "devDependencies": {
-    "espower-loader": "^0.7.1",
-    "intelli-espower-loader": "^0.1.0",
     "jshint": "^2.5.1",
-    "mocha": "^1.20.0",
-    "power-assert": "^0.7.2"
+    "mocha": "^1.20.0"
   },
   "testling": {
     "files": "test/*.js",
@@ -38,7 +35,7 @@
   },
   "scripts": {
     "build": "browserify index.js --standalone typeName > ./build/type-name.js",
-    "test": "./node_modules/.bin/jshint index.js && ./node_modules/.bin/mocha --require intelli-espower-loader"
+    "test": "./node_modules/.bin/jshint index.js && ./node_modules/.bin/mocha"
   },
   "author": {
     "name": "Takuto Wada",

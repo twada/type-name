@@ -9,7 +9,7 @@ var AnonPerson = function(name, age) {
 };
 
 var typeName = require('..'),
-    assert = require('power-assert'),
+    assert = require('assert'),
     fixtures = {
         'string literal': 'hoge',
         'number literal': 5,
@@ -37,7 +37,7 @@ var typeName = require('..'),
     };
 
 describe('typeName of', function () {
-    [
+    var i, sut, expected, input, tests = [
         ['string literal',           'string'],
         ['number literal',           'number'],
         ['boolean literal',          'boolean'],
@@ -61,10 +61,14 @@ describe('typeName of', function () {
         ['anonymous constructor',    ''],
         ['null literal',             'null'],
         ['undefined value',          'undefined']
-    ].forEach(function(cols) {
-        var sut = cols[0], expected = cols[1], input = fixtures[sut];
+    ], len = tests.length;
+
+    for(i = 0; i < len; i += 1) {
+        sut = tests[i][0];
+        expected = tests[i][1];
+        input = fixtures[sut];
         it(sut + ' is ' + expected, function () {
-            assert(typeName(input) === expected);
+            assert.equal(typeName(input), expected);
         });
-    });
+    }
 });
