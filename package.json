@@ -45,6 +45,12 @@
     "email": "takuto.wada@gmail.com",
     "url": "https://github.com/twada"
   },
+  "contributors": [
+    {
+      "name": "azu",
+      "url": "https://github.com/azu"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/twada/type-name.git"
