@@ -1,6 +1,6 @@
 {
   "name": "type-name",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Just a reasonable type name",
   "main": "build/type-name.js",
   "ignore": [
