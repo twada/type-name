@@ -27,7 +27,7 @@ DESCRIPTION
 | Date object | `new Date()` | `'Date'` |
 | RegExp object | `new RegExp('^not', 'g')` | `'RegExp'` |
 | Array object | `new Array()` | `'Array'` |
-| Function object | `new Function('x', 'y', 'return x + y')` | `'function'` |
+| Function object | `new Function('x', 'y', 'return x + y')` | `'function'` *(be careful!)* |
 | Error object | `new Error('error!')` | `'Error'` |
 | user-defined constructor | `new Person('alice', 5)` | `'Person'` |
 | anonymous constructor | `new AnonPerson('bob', 4)` | `''` |
