@@ -16,7 +16,6 @@
     "test": "test/"
   },
   "devDependencies": {
-    "jshint": "^2.5.1",
     "mocha": "^1.20.0"
   },
   "testling": {
@@ -35,7 +34,8 @@
   },
   "scripts": {
     "build": "browserify index.js --standalone typeName > ./build/type-name.js",
-    "test": "./node_modules/.bin/jshint index.js && ./node_modules/.bin/mocha"
+    "jshint": "jshint index.js",
+    "test": "./node_modules/.bin/mocha"
   },
   "author": {
     "name": "Takuto Wada",
