@@ -33,8 +33,6 @@ DESCRIPTION
 | Object object | `new Object()` | `'Object'` |
 | Function object | `new Function('x', 'y', 'return x + y')` | `'function'` *(be careful!)* |
 | Error object | `new Error('error!')` | `'Error'` |
-| user-defined constructor | `new Person('alice', 5)` | `'Person'` |
-| anonymous constructor | `new AnonPerson('bob', 4)` | `''` |
 | NaN | `NaN` | `'number'` |
 | Infinity | `Infinity` | `'number'` |
 | Math | `Math` | `'Math'` |
@@ -42,6 +40,8 @@ DESCRIPTION
 | arguments object | `(function(){ return arguments; })()` | `'Arguments'` |
 | null literal | `null` | `'null'` |
 | undefined value | `undefined` | `'undefined'` |
+| User-defined constructor | `new Person('alice', 5)` | `'Person'` |
+| Anonymous constructor | `new AnonPerson('bob', 4)` | `''` |
 
 
 EXAMPLE
@@ -50,16 +50,6 @@ EXAMPLE
 ```javascript
 var typeName = require('type-name'),
     assert = require('assert');
-
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
-}
-
-var AnonPerson = function(name, age) {
-    this.name = name;
-    this.age = age;
-};
 
 assert(typeName('foo') === 'string');
 assert(typeName(5) === 'number');
@@ -77,8 +67,6 @@ assert(typeName(new Array()) === 'Array');
 assert(typeName(new Object()) === 'Object');
 assert(typeName(new Function('x', 'y', 'return x + y')) === 'function');
 assert(typeName(new Error('error!')) === 'Error');
-assert(typeName(new Person('alice', 5)) === 'Person');
-assert(typeName(new AnonPerson('bob', 4)) === '');
 assert(typeName(NaN) === 'number');
 assert(typeName(Infinity) === 'number');
 assert(typeName(Math) === 'Math');
@@ -86,17 +74,53 @@ assert(typeName(JSON) === 'JSON');
 assert(typeName((function(){ return arguments; })()) === 'Arguments');
 assert(typeName(null) === 'null');
 assert(typeName(undefined) === 'undefined');
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+var AnonPerson = function(name, age) {
+    this.name = name;
+    this.age = age;
+};
+
+assert(typeName(new Person('alice', 5)) === 'Person');
+assert(typeName(new AnonPerson('bob', 4)) === '');
 ```
 
 
 INSTALL
 ---------------------------------------
 
+### via npm
+
+install
+
     $ npm install --save type-name
 
-or
+use
+
+```javascript
+var typeName = require('type-name');
+console.log(typeName(anyVar));
+```
+
+### via bower
+
+install
 
     $ bower install --save type-name
+
+load (`typeName` function is exposed)
+
+    <script type="text/javascript" src="./path/to/bower_components/type-name/build/type-name.js"></script>
+
+use
+
+```javascript
+console.log(typeName(anyVar));
+```
 
 
 AUTHOR
