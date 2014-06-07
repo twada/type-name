@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "description": "Just a reasonable type name",
   "keywords": [
-    "typeof"
+    "typeof",
+    "type"
   ],
   "main": "./index.js",
   "files": [
