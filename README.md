@@ -95,11 +95,11 @@ INSTALL
 
 ### via npm
 
-install
+Install
 
     $ npm install --save type-name
 
-use
+Use
 
 ```javascript
 var typeName = require('type-name');
@@ -108,15 +108,15 @@ console.log(typeName(anyVar));
 
 ### via bower
 
-install
+Install
 
     $ bower install --save type-name
 
-load (`typeName` function is exposed)
+Load (`typeName` function is exported)
 
     <script type="text/javascript" src="./path/to/bower_components/type-name/build/type-name.js"></script>
 
-use
+Use
 
 ```javascript
 console.log(typeName(anyVar));
