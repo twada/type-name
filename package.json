@@ -17,7 +17,7 @@
     "test": "test/"
   },
   "devDependencies": {
-    "mocha": "~1.20.0"
+    "mocha": "~1.20.1"
   },
   "testling": {
     "files": "test/*.js",
