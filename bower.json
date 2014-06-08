@@ -1,12 +1,16 @@
 {
   "name": "type-name",
-  "version": "0.1.1",
   "description": "Just a reasonable type name",
   "main": "build/type-name.js",
+  "license": "http://twada.mit-license.org/",
   "ignore": [
     "**/.*",
     "index.js",
     "package.json",
     "test"
+  ],
+  "keywords": [
+    "typeof",
+    "type"
   ]
 }
