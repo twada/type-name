@@ -10,6 +10,7 @@ var AnonPerson = function(name, age) {
 
 var typeName = require('..'),
     assert = require('assert'),
+    browser = require('browser'),
     fixtures = {
         'string literal': 'foo',
         'number literal': 5,
@@ -33,13 +34,15 @@ var typeName = require('..'),
         'NaN': NaN,
         'Infinity': Infinity,
         'Math': Math,
-        'arguments object': (function(){ return arguments; })(),
         'null literal': null,
         'undefined value': undefined
     };
 
 if (typeof JSON !== 'undefined') {
     fixtures['JSON'] = JSON;
+}
+if (!(browser.msie && browser.version <= 8)) {
+    fixtures['arguments object'] = (function(){ return arguments; })();
 }
 
 describe('typeName of', function () {
@@ -64,7 +67,6 @@ describe('typeName of', function () {
         ['NaN',                      'number'],
         ['Infinity',                 'number'],
         ['Math',                     'Math'],
-        ['arguments object',         'Arguments'],
         ['user-defined constructor', 'Person'],
         ['anonymous constructor',    ''],
         ['null literal',             'null'],
@@ -72,6 +74,9 @@ describe('typeName of', function () {
     ];
     if (typeof JSON !== 'undefined') {
         tests.push(['JSON', 'JSON']);
+    }
+    if (!(browser.msie && browser.version <= 8)) {
+        tests.push(['arguments object', 'Arguments']);
     }
 
     for(i = 0; i < tests.length; i += 1) {
