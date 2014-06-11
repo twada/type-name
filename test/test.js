@@ -43,7 +43,7 @@ if (typeof JSON !== 'undefined') {
 }
 
 describe('typeName of', function () {
-    var i, sut, expected, input, tests = [
+    var i, tests = [
         ['string literal',           'string'],
         ['number literal',           'number'],
         ['boolean literal',          'boolean'],
@@ -60,7 +60,7 @@ describe('typeName of', function () {
         ['Object object',            'Object'],
         ['Function object',          'function'], // be careful!
         ['Error object',             'Error'],
-        ['TypeError object',         'TypeError'],
+        ['TypeError object',         'Error'],
         ['NaN',                      'number'],
         ['Infinity',                 'number'],
         ['Math',                     'Math'],
@@ -75,11 +75,13 @@ describe('typeName of', function () {
     }
 
     for(i = 0; i < tests.length; i += 1) {
-        sut = tests[i][0];
-        expected = tests[i][1];
-        input = fixtures[sut];
-        it(sut + ' is ' + expected, function () {
-            assert.equal(typeName(input), expected);
-        });
+        (function(){
+            var sut = tests[i][0],
+                expected = tests[i][1],
+                input = fixtures[sut];
+            it(sut + ' is ' + expected, function () {
+                assert.equal(typeName(input), expected);
+            });
+        })();
     }
 });
