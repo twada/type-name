@@ -10,7 +10,7 @@ var AnonPerson = function(name, age) {
 
 var typeName = require('..'),
     assert = require('assert'),
-    // browser = require('browser'),
+    browser = require('browser'),
     fixtures = {
         'string literal': 'foo',
         'number literal': 5,
