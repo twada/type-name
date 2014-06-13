@@ -36,8 +36,8 @@ DESCRIPTION
 | NaN | `NaN` | `'number'` |
 | Infinity | `Infinity` | `'number'` |
 | Math | `Math` | `'Math'` |
-| JSON | `JSON` | `'JSON'` |
-| arguments object | `(function(){ return arguments; })()` | `'Arguments'` |
+| JSON (IE8+) | `JSON` | `'JSON'` |
+| arguments object (IE9+)  | `(function(){ return arguments; })()` | `'Arguments'` |
 | null literal | `null` | `'null'` |
 | undefined value | `undefined` | `'undefined'` |
 | User-defined constructor | `new Person('alice', 5)` | `'Person'` |
