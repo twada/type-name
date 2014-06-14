@@ -10,7 +10,7 @@ var AnonPerson = function(name, age) {
 
 var typeName = require('..'),
     assert = require('assert'),
-    browser = require('browser'),
+    bowser = require('bowser'),
     fixtures = {
         'string literal': 'foo',
         'number literal': 5,
@@ -41,9 +41,9 @@ var typeName = require('..'),
 if (typeof JSON !== 'undefined') {
     fixtures['JSON'] = JSON;
 }
-// if (!(browser.msie && browser.version <= 8)) {
-//     fixtures['arguments object'] = (function(){ return arguments; })();
-// }
+if (!(bowser.msie && bowser.version <= 8)) {
+    fixtures['arguments object'] = (function(){ return arguments; })();
+}
 
 describe('typeName of', function () {
     var i, tests = [
@@ -75,9 +75,9 @@ describe('typeName of', function () {
     if (typeof JSON !== 'undefined') {
         tests.push(['JSON', 'JSON']);
     }
-    // if (!(browser.msie && browser.version <= 8)) {
-    //     tests.push(['arguments object', 'Arguments']);
-    // }
+    if (!(bowser.msie && bowser.version <= 8)) {
+        tests.push(['arguments object', 'Arguments']);
+    }
 
     for(i = 0; i < tests.length; i += 1) {
         (function(){
