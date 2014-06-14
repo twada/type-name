@@ -41,7 +41,11 @@ var typeName = require('..'),
 if (typeof JSON !== 'undefined') {
     fixtures['JSON'] = JSON;
 }
-if (!(bowser.msie && bowser.version <= 8)) {
+
+//if (bowser.msie && bowser.version < 9) {
+if (bowser.msie) {
+    // ignore all IEs for now
+} else {
     fixtures['arguments object'] = (function(){ return arguments; })();
 }
 
@@ -75,7 +79,9 @@ describe('typeName of', function () {
     if (typeof JSON !== 'undefined') {
         tests.push(['JSON', 'JSON']);
     }
-    if (!(bowser.msie && bowser.version <= 8)) {
+    if (bowser.msie) {
+        // ignore all IEs for now
+    } else {
         tests.push(['arguments object', 'Arguments']);
     }
 
