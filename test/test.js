@@ -10,6 +10,8 @@ var AnonPerson = function(name, age) {
 
 var typeName = require('..'),
     assert = require('assert'),
+    UAParser = require('ua-parser-js'),
+    browser = new UAParser().getBrowser(),
     fixtures = {
         'string literal': 'foo',
         'number literal': 5,
@@ -33,13 +35,19 @@ var typeName = require('..'),
         'NaN': NaN,
         'Infinity': Infinity,
         'Math': Math,
-        'arguments object': (function(){ return arguments; })(),
         'null literal': null,
         'undefined value': undefined
     };
 
 if (typeof JSON !== 'undefined') {
     fixtures['JSON'] = JSON;
+}
+
+//if (bowser.msie && bowser.version < 9) {
+if (browser.name === 'IE') {
+    // ignore all IEs for now
+} else {
+    fixtures['arguments object'] = (function(){ return arguments; })();
 }
 
 describe('typeName of', function () {
@@ -64,7 +72,6 @@ describe('typeName of', function () {
         ['NaN',                      'number'],
         ['Infinity',                 'number'],
         ['Math',                     'Math'],
-        ['arguments object',         'Arguments'],
         ['user-defined constructor', 'Person'],
         ['anonymous constructor',    ''],
         ['null literal',             'null'],
@@ -72,6 +79,11 @@ describe('typeName of', function () {
     ];
     if (typeof JSON !== 'undefined') {
         tests.push(['JSON', 'JSON']);
+    }
+    if (browser.name === 'IE') {
+        // ignore all IEs for now
+    } else {
+        tests.push(['arguments object', 'Arguments']);
     }
 
     for(i = 0; i < tests.length; i += 1) {
