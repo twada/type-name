@@ -10,7 +10,8 @@ var AnonPerson = function(name, age) {
 
 var typeName = require('..'),
     assert = require('assert'),
-    bowser = require('bowser'),
+    UAParser = require('ua-parser-js'),
+    browser = new UAParser().getBrowser(),
     fixtures = {
         'string literal': 'foo',
         'number literal': 5,
@@ -43,7 +44,7 @@ if (typeof JSON !== 'undefined') {
 }
 
 //if (bowser.msie && bowser.version < 9) {
-if (bowser.msie) {
+if (browser.name === 'IE') {
     // ignore all IEs for now
 } else {
     fixtures['arguments object'] = (function(){ return arguments; })();
@@ -79,7 +80,7 @@ describe('typeName of', function () {
     if (typeof JSON !== 'undefined') {
         tests.push(['JSON', 'JSON']);
     }
-    if (bowser.msie) {
+    if (browser.name === 'IE') {
         // ignore all IEs for now
     } else {
         tests.push(['arguments object', 'Arguments']);
