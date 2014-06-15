@@ -33,7 +33,6 @@ var typeName = require('..'),
         'NaN': NaN,
         'Infinity': Infinity,
         'Math': Math,
-        'arguments object': (function(){ return arguments; })(),
         'null literal': null,
         'undefined value': undefined
     };
@@ -64,7 +63,6 @@ describe('typeName of', function () {
         ['NaN',                      'number'],
         ['Infinity',                 'number'],
         ['Math',                     'Math'],
-        ['arguments object',         'Arguments'],
         ['user-defined constructor', 'Person'],
         ['anonymous constructor',    ''],
         ['null literal',             'null'],

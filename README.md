@@ -70,8 +70,8 @@ assert(typeName(new Error('error!')) === 'Error');
 assert(typeName(NaN) === 'number');
 assert(typeName(Infinity) === 'number');
 assert(typeName(Math) === 'Math');
-assert(typeName(JSON) === 'JSON');
-assert(typeName((function(){ return arguments; })()) === 'Arguments');
+assert(typeName(JSON) === 'JSON'); // IE8+
+assert(typeName((function(){ return arguments; })()) === 'Arguments');  // IE9+
 assert(typeName(null) === 'null');
 assert(typeName(undefined) === 'undefined');
 
