@@ -1,0 +1,22 @@
+{
+  "name": "type-name",
+  "repository": "twada/type-name",
+  "description": "Just a reasonable type name",
+  "version": "0.1.1",
+  "keywords": [
+    "typeof",
+    "type"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "development": {
+    "dependencies": {
+      "visionmedia/mocha": "~1.20.1"
+    },
+    "scripts": [
+      "test/test.js"
+    ]
+  },
+  "license": "MIT"
+}
