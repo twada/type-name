@@ -6,6 +6,7 @@ Just a reasonable type name
 [![Build Status](https://travis-ci.org/twada/type-name.svg?branch=master)](https://travis-ci.org/twada/type-name)
 [![NPM version](https://badge.fury.io/js/type-name.svg)](http://badge.fury.io/js/type-name)
 [![Dependency Status](https://gemnasium.com/twada/type-name.svg)](https://gemnasium.com/twada/type-name)
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://twada.mit-license.org/)
 
 [![browser support](https://ci.testling.com/twada/type-name.png)](https://ci.testling.com/twada/type-name)
 
@@ -36,8 +37,8 @@ DESCRIPTION
 | NaN | `NaN` | `'number'` |
 | Infinity | `Infinity` | `'number'` |
 | Math | `Math` | `'Math'` |
-| JSON (IE8+) | `JSON` | `'JSON'` |
-| arguments object (IE9+)  | `(function(){ return arguments; })()` | `'Arguments'` |
+| JSON *(IE8+)* | `JSON` | `'JSON'` |
+| arguments object *(IE9+)*  | `(function(){ return arguments; })()` | `'Arguments'` |
 | null literal | `null` | `'null'` |
 | undefined value | `undefined` | `'undefined'` |
 | User-defined constructor | `new Person('alice', 5)` | `'Person'` |
@@ -121,6 +122,15 @@ Use
 ```javascript
 console.log(typeName(anyVar));
 ```
+
+### via component
+
+Install and build
+
+    $ component install twada/type-name
+    $ component build
+
+Then use as usual.
 
 
 AUTHOR
