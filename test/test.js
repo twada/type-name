@@ -73,13 +73,13 @@ describe('typeName of', function () {
     }
 
     for(i = 0; i < tests.length; i += 1) {
-        (function(){
-            var sut = tests[i][0],
-                expected = tests[i][1],
+        (function(idx){
+            var sut = tests[idx][0],
+                expected = tests[idx][1],
                 input = fixtures[sut];
             it(sut + ' is ' + expected, function () {
                 assert.equal(typeName(input), expected);
             });
-        })();
+        })(i);
     }
 });
