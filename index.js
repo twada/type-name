@@ -1,5 +1,5 @@
 /**
- * type-name - Just a reasonable type name
+ * type-name - Just a reasonable typeof
  * 
  * https://github.com/twada/type-name
  *

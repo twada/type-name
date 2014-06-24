@@ -1,7 +1,7 @@
 type-name
 ================================
 
-Just a reasonable type name
+Just a reasonable `typeof`
 
 [![Build Status](https://travis-ci.org/twada/type-name.svg?branch=master)](https://travis-ci.org/twada/type-name)
 [![NPM version](https://badge.fury.io/js/type-name.svg)](http://badge.fury.io/js/type-name)
@@ -14,7 +14,7 @@ Just a reasonable type name
 DESCRIPTION
 ---------------------------------------
 
-`typeName` function returns reasonable type name for input.
+`typeName` function returns reasonable type name for input value.
 
 | description    | input   | result      |
 |:---------------|:--------|:------------|
