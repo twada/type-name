@@ -12,7 +12,7 @@
   ],
   "development": {
     "dependencies": {
-      "visionmedia/mocha": "~1.20.1"
+      "mochajs/mocha": "~2.0.1"
     },
     "scripts": [
       "test/test.js"
