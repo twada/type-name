@@ -1,15 +1,16 @@
 var NonConstructorPerson = {
-  constructor: null,
+    constructor: null
 };
+
 var typeName = require('..'),
     assert = require('assert'),
     fixtures = {
-      "Object object": NonConstructorPerson,
+        'Object object': NonConstructorPerson
     };
 
 describe('typeName of', function () {
     var i, tests = [
-        ['Object object', 'Object'],
+        ['Object object', 'Object']
     ];
 
     for(i = 0; i < tests.length; i += 1) {
@@ -23,4 +24,3 @@ describe('typeName of', function () {
         })(i);
     }
 });
-
