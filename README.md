@@ -141,6 +141,7 @@ AUTHOR
 CONTRIBUTORS
 ---------------------------------------
 * [azu](https://github.com/azu)
+* [Yosuke Furukawa](https://github.com/yosuke-furukawa)
 
 
 LICENSE
