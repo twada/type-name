@@ -6,7 +6,7 @@ Just a reasonable `typeof`
 [![Build Status](https://travis-ci.org/twada/type-name.svg?branch=master)](https://travis-ci.org/twada/type-name)
 [![NPM version](https://badge.fury.io/js/type-name.svg)](http://badge.fury.io/js/type-name)
 [![Dependency Status](https://gemnasium.com/twada/type-name.svg)](https://gemnasium.com/twada/type-name)
-[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://twada.mit-license.org/)
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://twada.mit-license.org/2014-2015)
 
 [![browser support](https://ci.testling.com/twada/type-name.png)](https://ci.testling.com/twada/type-name)
 
@@ -146,4 +146,4 @@ CONTRIBUTORS
 
 LICENSE
 ---------------------------------------
-Licensed under the [MIT](http://twada.mit-license.org/) license.
+Licensed under the [MIT](http://twada.mit-license.org/2014-2015) license.
