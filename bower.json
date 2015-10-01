@@ -2,7 +2,7 @@
   "name": "type-name",
   "description": "Just a reasonable typeof",
   "main": "build/type-name.js",
-  "license": "http://twada.mit-license.org/",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "index.js",
