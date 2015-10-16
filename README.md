@@ -107,6 +107,13 @@ var typeName = require('type-name');
 console.log(typeName(anyVar));
 ```
 
+#### use type-name npm module on browser
+
+`typeName` function is exported
+
+    <script type="text/javascript" src="./path/to/node_modules/type-name/build/type-name.js"></script>
+
+
 ### via bower
 
 Install

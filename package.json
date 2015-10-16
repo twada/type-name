@@ -28,6 +28,7 @@
   "files": [
     "README.md",
     "index.js",
+    "build/type-name.js",
     "package.json",
     "test"
   ],
