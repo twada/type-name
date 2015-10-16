@@ -19,8 +19,8 @@
     }
   ],
   "devDependencies": {
-    "jshint": "^2.5.10",
-    "mocha": "^2.0.1"
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.3"
   },
   "directories": {
     "test": "test/"
