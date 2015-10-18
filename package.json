@@ -27,6 +27,7 @@
   },
   "files": [
     "README.md",
+    "CHANGELOG.md",
     "index.js",
     "build/type-name.js",
     "package.json",
