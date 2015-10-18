@@ -2,7 +2,7 @@
   "name": "type-name",
   "repository": "twada/type-name",
   "description": "Just a reasonable typeof",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "keywords": [
     "typeof",
     "type"
