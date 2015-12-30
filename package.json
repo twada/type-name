@@ -19,7 +19,11 @@
     }
   ],
   "devDependencies": {
+    "browserify": "^12.0.1",
+    "derequire": "^2.0.3",
+    "dereserve": "^0.1.1",
     "jshint": "^2.8.0",
+    "licensify": "^2.0.1",
     "mocha": "^2.3.3"
   },
   "directories": {
@@ -45,7 +49,7 @@
     "url": "git://github.com/twada/type-name.git"
   },
   "scripts": {
-    "build": "browserify index.js --standalone typeName | derequire > ./build/type-name.js",
+    "build": "browserify index.js --plugin licensify --standalone typeName | dereserve | derequire > ./build/type-name.js",
     "lint": "jshint index.js",
     "test": "npm run lint && mocha"
   },
