@@ -34,6 +34,7 @@ DESCRIPTION
 | Object object | `new Object()` | `'Object'` |
 | Function object | `new Function('x', 'y', 'return x + y')` | `'function'` *(be careful!)* |
 | Error object | `new Error('error!')` | `'Error'` |
+| TypeError object | `new TypeError('type error!')` | `'TypeError'` |
 | NaN | `NaN` | `'number'` |
 | Infinity | `Infinity` | `'number'` |
 | Math | `Math` | `'Math'` |
@@ -68,6 +69,7 @@ assert(typeName(new Array()) === 'Array');
 assert(typeName(new Object()) === 'Object');
 assert(typeName(new Function('x', 'y', 'return x + y')) === 'function');
 assert(typeName(new Error('error!')) === 'Error');
+assert(typeName(new TypeError('type error!')) === 'TypeError');
 assert(typeName(NaN) === 'number');
 assert(typeName(Infinity) === 'number');
 assert(typeName(Math) === 'Math');

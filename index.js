@@ -17,7 +17,7 @@ function funcName (f) {
 
 function ctorName (obj) {
     var strName = toStr.call(obj).slice(8, -1);
-    if (strName === 'Object' && obj.constructor) {
+    if ((strName === 'Object' || strName === 'Error') && obj.constructor) {
         return funcName(obj.constructor);
     }
     return strName;
