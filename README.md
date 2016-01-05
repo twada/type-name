@@ -8,7 +8,7 @@ Just a reasonable `typeof`
 [![Dependency Status](https://gemnasium.com/twada/type-name.svg)](https://gemnasium.com/twada/type-name)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://twada.mit-license.org/2014-2015)
 
-[![browser support](https://ci.testling.com/twada/type-name.png)](https://ci.testling.com/twada/type-name)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/type-name.svg)](https://saucelabs.com/u/type-name)
 
 
 DESCRIPTION
