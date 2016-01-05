@@ -39,8 +39,8 @@
   ],
   "homepage": "https://github.com/twada/type-name",
   "keywords": [
-    "typeof",
-    "type"
+    "type",
+    "typeof"
   ],
   "license": "MIT",
   "main": "./index.js",
@@ -49,9 +49,11 @@
     "url": "git://github.com/twada/type-name.git"
   },
   "scripts": {
-    "build": "browserify index.js --plugin licensify --standalone typeName | dereserve | derequire > ./build/type-name.js",
+    "build": "mkdir build && browserify index.js --plugin licensify --standalone typeName | dereserve | derequire > ./build/type-name.js",
     "lint": "jshint index.js",
-    "test": "npm run lint && mocha"
+    "preversion": "npm test",
+    "test": "npm run lint && mocha",
+    "version": "npm run build && git add -A build"
   },
   "testling": {
     "files": "test/*.js",
