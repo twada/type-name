@@ -51,7 +51,7 @@
     "url": "git://github.com/twada/type-name.git"
   },
   "scripts": {
-    "build": "mkdir build && browserify index.js --plugin licensify --standalone typeName | dereserve | derequire > ./build/type-name.js",
+    "build": "mkdir -p build && browserify index.js --plugin licensify --standalone typeName | dereserve | derequire > ./build/type-name.js",
     "lint": "jshint index.js",
     "preversion": "npm test",
     "test": "npm run lint && mocha",
