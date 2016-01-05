@@ -14,7 +14,5 @@ browsers:
     version: 11..latest
   - name: iphone
     version: ['5.1', '6.1', '7.1', '8.4', 'latest']
-  - name: ipad
-    version: ['5.1', '6.0', '7.0', '8.0', '8.4', 'latest']
   - name: android
     version: ['4.0', '4.4..latest']
