@@ -21,7 +21,7 @@ DESCRIPTION
 | string literal | `'foo'` | `'string'` |
 | number literal | `5` | `'number'` |
 | boolean literal | `false` | `'boolean'` |
-| regexp literal | `/^not/` | `'RegExp'` |
+| regexp literal *(Android 4.1+)* | `/^not/` | `'RegExp'` |
 | array literal | `['foo', 4]` | `'Array'` |
 | object literal | `{name: 'bar'}` | `'Object'` *(be careful!)* |
 | function expression | `function () {}` | `'function'` |
@@ -29,7 +29,7 @@ DESCRIPTION
 | Number object | `new Number('3')` | `'Number'` |
 | Boolean object |`new Boolean('1')` | `'Boolean'` |
 | Date object | `new Date()` | `'Date'` |
-| RegExp object | `new RegExp('^not', 'g')` | `'RegExp'` |
+| RegExp object *(Android 4.1+)* | `new RegExp('^not', 'g')` | `'RegExp'` |
 | Array object | `new Array()` | `'Array'` |
 | Object object | `new Object()` | `'Object'` |
 | Function object | `new Function('x', 'y', 'return x + y')` | `'function'` *(be careful!)* |
