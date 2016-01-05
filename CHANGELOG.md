@@ -3,12 +3,12 @@
 
 #### Features
 
-  * [return the actual Error constructor name](https://github.com/twada/type-name/pull/5), closes [#4](https://github.com/twada/type-name/issues/4))
+  * [return the actual Error constructor name](https://github.com/twada/type-name/pull/5), closes [#4](https://github.com/twada/type-name/issues/4)
 
 
 #### Breaking Changes
 
-  * `typeName(error)` returns actual error constructor name, not just `'Error'` ([c857cea3](https://github.com/twada/type-name/commit/c857cea3d79523105f3aa14552df8bd3267a88cb)
+  * `typeName(error)` returns actual error constructor name, not just `'Error'` ([c857cea3](https://github.com/twada/type-name/commit/c857cea3d79523105f3aa14552df8bd3267a88cb))
 
 before:
 ```js
