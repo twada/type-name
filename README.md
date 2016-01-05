@@ -132,15 +132,6 @@ Use
 console.log(typeName(anyVar));
 ```
 
-### via component
-
-Install and build
-
-    $ component install twada/type-name
-    $ component build
-
-Then use as usual.
-
 
 AUTHOR
 ---------------------------------------
