@@ -1,3 +1,28 @@
+## [2.0.0](https://github.com/twada/type-name/releases/tag/v2.0.0) (2016-01-06)
+
+
+#### Features
+
+  * [return the actual Error constructor name](https://github.com/twada/type-name/pull/5), closes [#4](https://github.com/twada/type-name/issues/4))
+
+
+#### Breaking Changes
+
+  * `typeName(error)` returns actual error constructor name, not just `'Error'` ([c857cea3](https://github.com/twada/type-name/commit/c857cea3d79523105f3aa14552df8bd3267a88cb)
+
+before:
+```js
+typeName(new TypeError('type error!')) // => 'Error'
+```
+
+after 2.0.0:
+```js
+typeName(new TypeError('type error!')) // => 'TypeError'
+```
+
+  * component is no longer supported ([e6f17109](https://github.com/twada/type-name/commit/e6f17109b6aece2e6f535d2918794fd9094628f8))
+
+
 ## [1.1.0](https://github.com/twada/type-name/releases/tag/v1.1.0) (2015-10-18)
 
 
