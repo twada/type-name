@@ -3,12 +3,12 @@ type-name
 
 Just a reasonable `typeof`
 
-[![Build Status](https://travis-ci.org/twada/type-name.svg?branch=master)](https://travis-ci.org/twada/type-name)
-[![NPM version](https://badge.fury.io/js/type-name.svg)](http://badge.fury.io/js/type-name)
-[![Dependency Status](https://gemnasium.com/twada/type-name.svg)](https://gemnasium.com/twada/type-name)
-[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://twada.mit-license.org/2014-2015)
+[![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url]
+[![Dependency Status][depstat-image]][depstat-url]
+[![License][license-image]][license-url]
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/type-name.svg)](https://saucelabs.com/u/type-name)
+[![Sauce Test Status][saucelabs-image]][saucelabs-url]
 
 
 DESCRIPTION
@@ -144,7 +144,7 @@ Then use as usual.
 
 AUTHOR
 ---------------------------------------
-* [Takuto Wada](http://github.com/twada)
+* [Takuto Wada](https://github.com/twada)
 
 
 CONTRIBUTORS
@@ -155,4 +155,20 @@ CONTRIBUTORS
 
 LICENSE
 ---------------------------------------
-Licensed under the [MIT](http://twada.mit-license.org/2014-2015) license.
+Licensed under the [MIT](https://twada.mit-license.org/2014-2016) license.
+
+
+[npm-url]: https://npmjs.org/package/type-name
+[npm-image]: https://badge.fury.io/js/type-name.svg
+
+[travis-url]: https://travis-ci.org/twada/type-name
+[travis-image]: https://secure.travis-ci.org/twada/type-name.svg?branch=master
+
+[depstat-url]: https://gemnasium.com/twada/type-name
+[depstat-image]: https://gemnasium.com/twada/type-name.svg
+
+[license-url]: https://twada.mit-license.org/2014-2016
+[license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg
+
+[saucelabs-url]: https://saucelabs.com/u/type-name
+[saucelabs-image]: https://saucelabs.com/browser-matrix/type-name.svg
