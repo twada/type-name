@@ -9,6 +9,7 @@ var AnonPerson = function(name, age) {
 };
 
 var typeName = require('..'),
+    woothee = require('woothee'),
     assert = require('assert'),
     fixtures = {
         'string literal': 'foo',
@@ -38,8 +39,32 @@ var typeName = require('..'),
         'undefined value': undefined
     };
 
-if (typeof JSON !== 'undefined') {
+function addJsonSuite (tests, fixtures) {
+    if (typeof JSON === 'undefined') {
+        return;
+    }
     fixtures['JSON'] = JSON;
+    if (typeof navigator !== 'undefined' && navigator.userAgent) {
+        var ua = woothee.parse(navigator.userAgent);
+        if (ua.name === 'Internet Explorer' && (ua.version === '6.0' || ua.version === '7.0')) {
+            tests.push(['JSON', 'Object']);
+            return;
+        }
+    }
+    tests.push(['JSON', 'JSON']);
+}
+
+function tweakRegExpSuite (tests) {
+    if (typeof navigator !== 'undefined' && navigator.userAgent) {
+        var ua = woothee.parse(navigator.userAgent);
+        if (ua.os === 'Android' && ua.version === '4.0') {
+            tests.push(['regexp literal', 'function']);
+            tests.push(['RegExp object',  'function']);
+            return;
+        }
+    }
+    tests.push(['regexp literal', 'RegExp']);
+    tests.push(['RegExp object',  'RegExp']);
 }
 
 describe('typeName of', function () {
@@ -47,7 +72,6 @@ describe('typeName of', function () {
         ['string literal',           'string'],
         ['number literal',           'number'],
         ['boolean literal',          'boolean'],
-        ['regexp literal',           'RegExp'],
         ['array literal',            'Array'],
         ['object literal',           'Object'], // be careful!
         ['function expression',      'function'],
@@ -55,7 +79,6 @@ describe('typeName of', function () {
         ['Number object',            'Number'],
         ['Boolean object',           'Boolean'],
         ['Date object',              'Date'],
-        ['RegExp object',            'RegExp'],
         ['Array object',             'Array'],
         ['Object object',            'Object'],
         ['Function object',          'function'], // be careful!
@@ -70,9 +93,8 @@ describe('typeName of', function () {
         ['null literal',             'null'],
         ['undefined value',          'undefined']
     ];
-    if (typeof JSON !== 'undefined') {
-        tests.push(['JSON', 'JSON']);
-    }
+    addJsonSuite(tests, fixtures);
+    tweakRegExpSuite(tests);
 
     for(i = 0; i < tests.length; i += 1) {
         (function(idx){
