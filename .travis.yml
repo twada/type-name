@@ -3,11 +3,11 @@ sudo: false
 node_js:
   - "0.10"
   - "0.12"
-  - "4.2"
-  - "stable"
+  - "4"
+  - "5"
 script:
   - "npm test"
-  - if [[ "$TRAVIS_NODE_VERSION" == "4.2" ]]; then npm run test-saucelabs; fi
+  - if [[ "$TRAVIS_NODE_VERSION" == "4" ]]; then npm run test-saucelabs; fi
 env:
   global:
     - secure: GCD8IZsf+apGess3RXaS9oDLOR4iUU2piV0/hIUgcsFtWcDWDBN5dpDPu/ol8T7Hae+Fq7ZnOPCFj3ioBCj4kTneHOvTbq9sMRzUd97U1iY/LlIxggQlF4Q5g3ZZ2LIT7R/FjCf2ntVOXeipHwcZgx/8mVW4B9A5iJL26mhpyPs=
