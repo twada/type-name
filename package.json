@@ -32,12 +32,8 @@
     "test": "test/"
   },
   "files": [
-    "README.md",
-    "CHANGELOG.md",
     "index.js",
-    "build/type-name.js",
-    "package.json",
-    "test"
+    "build/type-name.js"
   ],
   "homepage": "https://github.com/twada/type-name",
   "keywords": [
