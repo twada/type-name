@@ -1,3 +1,9 @@
+### [2.0.1](https://github.com/twada/type-name/releases/tag/v2.0.1) (2016-03-20)
+
+
+  * reduce package size (by [@dawsonbotsford](https://github.com/dawsonbotsford))
+
+
 ## [2.0.0](https://github.com/twada/type-name/releases/tag/v2.0.0) (2016-01-06)
 
 
