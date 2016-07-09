@@ -146,7 +146,7 @@ CONTRIBUTORS
 
 LICENSE
 ---------------------------------------
-Licensed under the [MIT](http://twada.mit-license.org/2014-2016) license.
+Licensed under the [MIT](https://github.com/twada/type-name/blob/master/LICENSE) license.
 
 
 [npm-url]: https://npmjs.org/package/type-name
@@ -158,7 +158,7 @@ Licensed under the [MIT](http://twada.mit-license.org/2014-2016) license.
 [depstat-url]: https://gemnasium.com/twada/type-name
 [depstat-image]: https://gemnasium.com/twada/type-name.svg
 
-[license-url]: http://twada.mit-license.org/2014-2016
+[license-url]: https://github.com/twada/type-name/blob/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 
 [saucelabs-url]: https://saucelabs.com/u/type-name
