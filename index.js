@@ -32,7 +32,7 @@ function typeName (val) {
     if (val === null) {
         return 'null';
     }
-    type = typeof(val);
+    type = typeof val;
     if (type === 'object') {
         return ctorName(val);
     }
