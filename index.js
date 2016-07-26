@@ -12,7 +12,12 @@
 var toStr = Object.prototype.toString;
 
 function funcName (f) {
-    return f.name ? f.name : /^\s*function\s*([^\(]*)/im.exec(f.toString())[1];
+    if (f.name) {
+        return f.name;
+    } else {
+        var match = /^\s*function\s*([^\(]*)/im.exec(f.toString());
+        return match ? match[1] : '';
+    }
 }
 
 function ctorName (obj) {

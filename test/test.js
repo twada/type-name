@@ -32,6 +32,8 @@ var typeName = require('..'),
         'RangeError object': new RangeError('range error!'),
         'user-defined constructor': new Person('alice', 5),
         'anonymous constructor': new AnonPerson('bob', 4),
+        'anonymous class': new(class { constructor() {} }),
+        'named class': new(class Foo { constructor() {} }),
         'NaN': NaN,
         'Infinity': Infinity,
         'Math': Math,
@@ -90,6 +92,8 @@ describe('typeName of', function () {
         ['Math',                     'Math'],
         ['user-defined constructor', 'Person'],
         ['anonymous constructor',    ''],
+        ['anonymous class',          ''],
+        ['named class',              'Foo'],
         ['null literal',             'null'],
         ['undefined value',          'undefined']
     ];
