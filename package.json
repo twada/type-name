@@ -50,7 +50,8 @@
     "build": "mkdir -p build && browserify index.js --plugin licensify --standalone typeName | dereserve | derequire > ./build/type-name.js",
     "lint": "jshint index.js",
     "preversion": "npm test",
-    "test": "npm run lint && mocha",
+    "test": "npm run lint && mocha && npm run test-es6",
+    "test-es6": "./test/travis_es6.sh",
     "test-saucelabs": "zuul -- test/*.js",
     "version": "npm run build && git add -A build"
   }
