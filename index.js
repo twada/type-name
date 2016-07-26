@@ -14,10 +14,9 @@ var toStr = Object.prototype.toString;
 function funcName (f) {
     if (f.name) {
         return f.name;
-    } else {
-        var match = /^\s*function\s*([^\(]*)/im.exec(f.toString());
-        return match ? match[1] : '';
     }
+    var match = /^\s*function\s*([^\(]*)/im.exec(f.toString());
+    return match ? match[1] : '';
 }
 
 function ctorName (obj) {
