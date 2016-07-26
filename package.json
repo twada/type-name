@@ -21,7 +21,7 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "derequire": "^2.0.3",
-    "dereserve": "^0.1.1",
+    "dereserve": "^1.0.0",
     "jshint": "~2.8.0",
     "licensify": "^3.1.0",
     "mocha": "^2.4.5",
