@@ -1,6 +1,6 @@
 /**
  * type-name - Just a reasonable typeof
- * 
+ *
  * https://github.com/twada/type-name
  *
  * Copyright (c) 2014-2016 Takuto Wada
