@@ -15,4 +15,12 @@ describe('ES6 features', () => {
         assert.equal(typeName(input), 'Foo');
     });
 
+    it('Symbol', () => {
+        assert.equal(typeName(Symbol("FOO")), 'symbol');
+    });
+
+    it('Promise', () => {
+        assert.equal(typeName(Promise.resolve(1)), 'Promise');
+    });
+
 });
