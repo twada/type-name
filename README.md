@@ -152,6 +152,7 @@ CONTRIBUTORS
 * [azu](https://github.com/azu)
 * [Yosuke Furukawa](https://github.com/yosuke-furukawa)
 * [Athan](https://github.com/kgryte)
+* [Andrew Moss](https://github.com/inversion)
 
 
 LICENSE

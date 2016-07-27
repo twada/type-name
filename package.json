@@ -20,6 +20,11 @@
     {
       "name": "Athan",
       "url": "https://github.com/kgryte"
+    },
+    {
+      "name": "Andrew Moss",
+      "url": "https://github.com/inversion"
+
     }
   ],
   "devDependencies": {
