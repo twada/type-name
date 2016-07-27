@@ -1,7 +1,7 @@
 {
   "name": "type-name",
   "description": "Just a reasonable typeof",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": {
     "name": "Takuto Wada",
     "email": "takuto.wada@gmail.com",
@@ -24,7 +24,6 @@
     {
       "name": "Andrew Moss",
       "url": "https://github.com/inversion"
-
     }
   ],
   "devDependencies": {
