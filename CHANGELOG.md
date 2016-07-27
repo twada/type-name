@@ -1,3 +1,11 @@
+### [2.0.2](https://github.com/twada/type-name/releases/tag/v2.0.2) (2016-07-27)
+
+
+#### Bug Fixes
+
+  * [Fix crash when called with an es6 anonymous class instance](https://github.com/twada/type-name/pull/11) (by [@inversion](https://github.com/inversion))
+
+
 ### [2.0.1](https://github.com/twada/type-name/releases/tag/v2.0.1) (2016-03-20)
 
 
@@ -9,7 +17,7 @@
 
 #### Features
 
-  * [return the actual Error constructor name](https://github.com/twada/type-name/pull/5), closes [#4](https://github.com/twada/type-name/issues/4)
+  * [return the actual Error constructor name](https://github.com/twada/type-name/pull/5), closes [#4](https://github.com/twada/type-name/issues/4) (by [@kgryte](https://github.com/kgryte))
 
 
 #### Breaking Changes
@@ -42,7 +50,7 @@ typeName(new TypeError('type error!')) // => 'TypeError'
 
 #### Bug Fixes
 
-  * [check constructor existence](https://github.com/twada/type-name/pull/3) by [@yosuke-furukawa](https://github.com/yosuke-furukawa)
+  * [check constructor existence](https://github.com/twada/type-name/pull/3) (by [@yosuke-furukawa](https://github.com/yosuke-furukawa))
 
 
 ## [1.0.0](https://github.com/twada/type-name/releases/tag/v1.0.0) (2014-06-24)
