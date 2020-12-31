@@ -9,34 +9,42 @@
  */
 'use strict';
 
-var toStr = Object.prototype.toString;
+var toStr = {}.toString;
 
-function funcName (f) {
-    if (f.name) {
-        return f.name;
-    }
-    var match = /^\s*function\s*([^\(]*)/im.exec(f.toString());
+function extractName (obj) {
+    var match = /^\s*function\s*([^\(\s]+)/i.exec(obj.constructor.toString());
     return match ? match[1] : '';
 }
 
-function ctorName (obj) {
-    var strName = toStr.call(obj).slice(8, -1);
-    if ((strName === 'Object' || strName === 'Error') && obj.constructor) {
-        return funcName(obj.constructor);
+function ctorName (obj, options) {
+    var $default, getName = options.name;
+    var name = typeof getName === 'function' ?
+        getName(obj) :
+        obj.constructor.name;
+    if (name) {
+        return name;
+    } else {
+        $default = options['default'] || extractName;
+        return typeof $default === 'function' ? $default(obj) : $default;
     }
-    return strName;
 }
 
-function typeName (val) {
-    var type;
-    if (val === null) {
-        return 'null';
+function objectName (obj, options) {
+    var name = toStr.call(obj).slice(8, -1);
+    if ((name === 'Object' || name === 'Error') && obj.constructor) {
+        return ctorName(obj, options);
+    } else {
+        return name;
     }
-    type = typeof val;
+}
+
+function typeName (val, options) {
+    var type = val === null ? 'null' : typeof val;
     if (type === 'object') {
-        return ctorName(val);
+        return objectName(val, options || {});
+    } else {
+        return type;
     }
-    return type;
 }
 
 module.exports = typeName;

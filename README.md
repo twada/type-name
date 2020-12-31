@@ -44,9 +44,9 @@ DESCRIPTION
 | arguments object *(IE9+)*  | `(function(){ return arguments; })()` | `'Arguments'` |
 | User-defined constructor | `new Person('alice', 5)` | `'Person'` |
 | Anonymous constructor | `new AnonPerson('bob', 4)` | `''` |
-| Named class | `new(class Foo { constructor() {} })` | `'Foo'` |
-| Anonymous class | `new(class { constructor() {} })` | `''` |
-| Symbol | `Symbol("FOO")` | `'symbol'` |
+| Named class | `new(class Foo { })` | `'Foo'` |
+| Anonymous class | `new(class { })` | `''` |
+| Symbol | `Symbol('FOO')` | `'symbol'` |
 | Promise | `Promise.resolve(1)` | `'Promise'` |
 
 
@@ -81,7 +81,7 @@ assert(typeName(Infinity) === 'number');
 assert(typeName(Math) === 'Math');
 assert(typeName(JSON) === 'JSON'); // IE8+
 assert(typeName((function(){ return arguments; })()) === 'Arguments');  // IE9+
-assert(typeName(Symbol("FOO")) === 'symbol');
+assert(typeName(Symbol('FOO')) === 'symbol');
 assert(typeName(Promise.resolve(1)) === 'Promise');
 
 function Person(name, age) {
@@ -89,16 +89,30 @@ function Person(name, age) {
     this.age = age;
 }
 
-var AnonPerson = function(name, age) {
+class MockPerson extends Person {}
+
+var person = new Person('alice', 5);
+var mockPerson = new MockPerson('alice', 5);
+
+var anonPerson = new function(name, age) {
     this.name = name;
     this.age = age;
 };
 
-assert(typeName(new Person('alice', 5)) === 'Person');
-assert(typeName(new AnonPerson('bob', 4)) === '');
+var getDefault = ({ constructor: ctor }) => {
+    return ctor === anonPerson.constructor ? 'AnonPerson' : '';
+};
 
-assert(typeName(new(class Foo { constructor() {} })) === 'Foo');
-assert(typeName(new(class { constructor() {} })) === '');
+var getName = ({ constructor: ctor }) => {
+    return ctor === MockPerson ? 'Person' : ctor.name;
+};
+
+assert(typeName(person) === 'Person');
+assert(typeName(anonPerson) === '');
+assert(typeName(anonPerson, { default: 'unknown' }) === 'unknown');
+assert(typeName(anonPerson, { default: getDefault }) === 'AnonPerson');
+assert(typeName(mockPerson) === 'MockPerson');
+assert(typeName(mockPerson, { name: getName }) === 'Person');
 ```
 
 
