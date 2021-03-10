@@ -41,6 +41,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "build/type-name.js"
   ],
   "homepage": "https://github.com/twada/type-name",
@@ -50,6 +51,7 @@
   ],
   "license": "MIT",
   "main": "./index.js",
+  "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/twada/type-name.git"
