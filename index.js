@@ -15,7 +15,7 @@ function funcName (f) {
     if (f.name) {
         return f.name;
     }
-    var match = /^\s*function\s*([^\(]*)/im.exec(f.toString());
+    var match = /^\s*function\s*([^\(\s]+)/i.exec(f.toString());
     return match ? match[1] : '';
 }
 
