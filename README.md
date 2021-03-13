@@ -3,12 +3,9 @@ type-name
 
 Just a reasonable `typeof`
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status][ci-image]][ci-url]
 [![NPM version][npm-image]][npm-url]
-[![Dependency Status][depstat-image]][depstat-url]
 [![License][license-image]][license-url]
-
-[![Sauce Test Status][saucelabs-image]][saucelabs-url]
 
 
 DESCRIPTION
@@ -163,14 +160,8 @@ Licensed under the [MIT](https://github.com/twada/type-name/blob/master/LICENSE)
 [npm-url]: https://npmjs.org/package/type-name
 [npm-image]: https://badge.fury.io/js/type-name.svg
 
-[travis-url]: https://travis-ci.org/twada/type-name
-[travis-image]: https://secure.travis-ci.org/twada/type-name.svg?branch=master
-
-[depstat-url]: https://gemnasium.com/twada/type-name
-[depstat-image]: https://gemnasium.com/twada/type-name.svg
+[ci-image]: https://github.com/twada/type-name/workflows/Node.js%20CI/badge.svg
+[ci-url]: https://github.com/twada/type-name/actions?query=workflow%3A%22Node.js+CI%22
 
 [license-url]: https://github.com/twada/type-name/blob/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg
-
-[saucelabs-url]: https://saucelabs.com/u/type-name
-[saucelabs-image]: https://saucelabs.com/browser-matrix/type-name.svg
