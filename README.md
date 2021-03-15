@@ -51,8 +51,8 @@ EXAMPLE
 ---------------------------------------
 
 ```javascript
-var typeName = require('type-name');
-var assert = require('assert');
+const typeName = require('type-name');
+const assert = require('assert');
 
 assert(typeName(null) === 'null');
 assert(typeName(undefined) === 'undefined');
@@ -86,7 +86,7 @@ function Person(name, age) {
     this.age = age;
 }
 
-var AnonPerson = function(name, age) {
+const AnonPerson = function(name, age) {
     this.name = name;
     this.age = age;
 };
@@ -102,39 +102,14 @@ assert(typeName(new(class { constructor() {} })) === '');
 INSTALL
 ---------------------------------------
 
-### via npm
-
-Install
-
     $ npm install --save type-name
 
-Use
+
+USAGE
+---------------------------------------
 
 ```javascript
-var typeName = require('type-name');
-console.log(typeName(anyVar));
-```
-
-#### use type-name npm module on browser
-
-`typeName` function is exported
-
-    <script type="text/javascript" src="./path/to/node_modules/type-name/build/type-name.js"></script>
-
-
-### via bower
-
-Install
-
-    $ bower install --save type-name
-
-Load (`typeName` function is exported)
-
-    <script type="text/javascript" src="./path/to/bower_components/type-name/build/type-name.js"></script>
-
-Use
-
-```javascript
+const typeName = require('type-name');
 console.log(typeName(anyVar));
 ```
 
