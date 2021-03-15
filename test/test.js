@@ -1,6 +1,5 @@
 var assert = require('assert');
 var typeName = require('..');
-var woothee = require('woothee');
 
 // use indirection to avoid name assignment in ES6
 function anon (fn) {
@@ -49,6 +48,7 @@ var fixtures = {
     'user-defined constructor': new Person('alice', 5),
     'anonymous constructor': new AnonymousPerson('bob', 4),
     'pseudonymous constructor': new PseudonymousPerson('nemo', 3),
+    'JSON': JSON,
     'NaN': NaN,
     'Infinity': Infinity,
     'Math': Math,
@@ -56,39 +56,12 @@ var fixtures = {
     'undefined value': undefined
 };
 
-function addJsonSuite (tests, fixtures) {
-    if (typeof JSON === 'undefined') {
-        return;
-    }
-    fixtures['JSON'] = JSON;
-    if (typeof navigator !== 'undefined' && navigator.userAgent) {
-        var ua = woothee.parse(navigator.userAgent);
-        if (ua.name === 'Internet Explorer' && (ua.version === '6.0' || ua.version === '7.0')) {
-            tests.push(['JSON', 'Object']);
-            return;
-        }
-    }
-    tests.push(['JSON', 'JSON']);
-}
-
-function tweakRegExpSuite (tests) {
-    if (typeof navigator !== 'undefined' && navigator.userAgent) {
-        var ua = woothee.parse(navigator.userAgent);
-        if (ua.os === 'Android' && ua.version === '4.0') {
-            tests.push(['regexp literal', 'function']);
-            tests.push(['RegExp object',  'function']);
-            return;
-        }
-    }
-    tests.push(['regexp literal', 'RegExp']);
-    tests.push(['RegExp object',  'RegExp']);
-}
-
 describe('typeName of', function () {
     var i, tests = [
         ['string literal',           'string'],
         ['number literal',           'number'],
         ['boolean literal',          'boolean'],
+        ['regexp literal',           'RegExp'],
         ['array literal',            'Array'],
         ['object literal',           'Object'], // be careful!
         ['function expression',      'function'],
@@ -96,12 +69,14 @@ describe('typeName of', function () {
         ['Number object',            'Number'],
         ['Boolean object',           'Boolean'],
         ['Date object',              'Date'],
+        ['RegExp object',            'RegExp'],
         ['Array object',             'Array'],
         ['Object object',            'Object'],
         ['Function object',          'function'], // be careful!
         ['Error object',             'Error'],
         ['TypeError object',         'TypeError'],
         ['RangeError object',        'RangeError'],
+        ['JSON',                     'JSON'],
         ['NaN',                      'number'],
         ['Infinity',                 'number'],
         ['Math',                     'Math'],
@@ -111,8 +86,6 @@ describe('typeName of', function () {
         ['null literal',             'null'],
         ['undefined value',          'undefined']
     ];
-    addJsonSuite(tests, fixtures);
-    tweakRegExpSuite(tests);
 
     for(i = 0; i < tests.length; i += 1) {
         (function(idx){
