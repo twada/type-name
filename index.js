@@ -3,7 +3,7 @@
  *
  * https://github.com/twada/type-name
  *
- * Copyright (c) 2014-2016 Takuto Wada
+ * Copyright (c) 2014-2021 Takuto Wada
  * Licensed under the MIT license.
  *   https://github.com/twada/type-name/blob/master/LICENSE
  */
