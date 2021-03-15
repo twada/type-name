@@ -27,11 +27,7 @@
     }
   ],
   "devDependencies": {
-    "browserify": "^13.0.0",
-    "derequire": "^2.0.3",
-    "dereserve": "^1.0.0",
     "jshint": "~2.8.0",
-    "licensify": "^3.1.0",
     "mocha": "^2.4.5",
     "woothee": "^1.3.0"
   },
@@ -40,8 +36,7 @@
   },
   "files": [
     "index.js",
-    "index.d.ts",
-    "build/type-name.js"
+    "index.d.ts"
   ],
   "homepage": "https://github.com/twada/type-name",
   "keywords": [
@@ -56,10 +51,8 @@
     "url": "git://github.com/twada/type-name.git"
   },
   "scripts": {
-    "build": "mkdir -p build && browserify index.js --plugin licensify --standalone typeName | dereserve | derequire > ./build/type-name.js",
     "lint": "jshint index.js",
     "preversion": "npm test",
-    "test": "npm run lint && mocha",
-    "version": "npm run build && git add -A build"
+    "test": "npm run lint && mocha"
   }
 }
